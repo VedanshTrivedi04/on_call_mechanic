@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    ".trycloudflare.com",
+    "on-call-mechanic.onrender.com",
+    
 ]
 
 from dotenv import load_dotenv
