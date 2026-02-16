@@ -23,9 +23,4 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include("core.urls")),
 ]
-def home(request):
-    return HttpResponse("OK")
 
-urlpatterns = [
-    path("", home),
-]
