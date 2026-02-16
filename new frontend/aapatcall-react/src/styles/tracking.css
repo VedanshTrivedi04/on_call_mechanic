@@ -1,0 +1,267 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background: #f4f6fb;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: #0f172a;
+  color: white;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: #e5e7eb;
+  margin-left: 16px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navbar a.logout:hover {
+  color: #ef4444;
+}
+
+.logo img {
+  height: 42px;
+}
+
+/* ===== MAP ===== */
+#map {
+  height: calc(100vh - 70px);
+  width: 100%;
+}
+
+/* ===== STATUS CARD ===== */
+.status-card {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: white;
+  border-radius: 20px 20px 0 0;
+  padding: 22px;
+
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+/* ===== TEXT ===== */
+.status-card h3 {
+  margin-bottom: 10px;
+}
+
+.status,
+.eta {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+#statusText {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.call-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .status-card {
+    padding: 18px;
+  }
+}
+
+/* ===== MECHANIC TRACKING PAGE ===== */
+.mechanic-tracking-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f1f5f9;
+}
+
+.mechanic-tracking-page .navbar {
+  flex-shrink: 0;
+}
+
+.mechanic-tracking-map {
+  flex: 1;
+  min-height: 55vh;
+  width: 100%;
+  background: #cbd5e1;
+}
+
+.mechanic-tracking-sheet {
+  background: #fff;
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px 28px;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.mechanic-tracking-sheet h3 {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.mechanic-tracking-sheet .sheet-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.mechanic-tracking-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.mechanic-tracking-actions .btn-full {
+  grid-column: 1 / -1;
+}
+
+.mechanic-tracking-btn {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mechanic-tracking-btn:active {
+  transform: scale(0.98);
+}
+
+.mechanic-tracking-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mechanic-tracking-btn-maps {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.mechanic-tracking-btn-maps:hover:not(:disabled) {
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+}
+
+.mechanic-tracking-btn-status {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+.mechanic-tracking-btn-status:hover:not(:disabled) {
+  background: #e2e8f0;
+}
+
+.mechanic-tracking-btn-complete {
+  background: #22c55e;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+}
+
+.mechanic-tracking-btn-complete:hover:not(:disabled) {
+  background: #16a34a;
+}
+
+.mechanic-tracking-btn-call {
+  background: #0f172a;
+  color: #fff;
+}
+
+.mechanic-tracking-btn-call:hover:not(:disabled) {
+  background: #1e293b;
+}
+
+@media (min-width: 480px) {
+  .mechanic-tracking-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mechanic-tracking-btn-maps {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .mechanic-tracking-sheet {
+    padding: 18px 14px 22px;
+  }
+
+  .mechanic-tracking-sheet h3 {
+    font-size: 1.1rem;
+  }
+
+  .mechanic-tracking-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanic-tracking-btn {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+
+  .status-card {
+    padding: 14px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .call-btn,
+  .cancel-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

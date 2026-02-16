@@ -1,0 +1,208 @@
+/* ===== Video Call – WhatsApp / Google Meet style ===== */
+.video-call-page {
+  position: fixed;
+  inset: 0;
+  background: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.video-call-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.video-call-topbar h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.video-call-status {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Remote video = full background */
+.video-call-remote-wrap {
+  position: absolute;
+  inset: 0;
+  background: #0f0f1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-call-remote-wrap .video-remote {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Local video = PiP bottom-right */
+.video-call-local-wrap {
+  position: absolute;
+  right: 16px;
+  bottom: 100px;
+  width: 120px;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.video-call-local-wrap .video-local {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #2d2d44;
+}
+
+/* Controls bar at bottom – WhatsApp/Google style */
+.video-call-controls-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 3;
+}
+
+.video-call-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.video-call-btn:active {
+  transform: scale(0.95);
+}
+
+.video-call-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.video-call-btn-answer {
+  background: #22c55e;
+  color: #fff;
+}
+
+.video-call-btn-answer:hover:not(:disabled) {
+  background: #16a34a;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.4);
+}
+
+.video-call-btn-end {
+  width: 64px;
+  height: 64px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.video-call-btn-end:hover:not(:disabled) {
+  background: #dc2626;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.5);
+}
+
+/* When call not started – centered prompt */
+.video-call-setup {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1;
+}
+
+.video-call-setup-inner {
+  text-align: center;
+  color: #e5e7eb;
+  max-width: 320px;
+}
+
+.video-call-setup-inner p {
+  margin: 8px 0 20px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.video-call-setup .video-call-controls-bar {
+  position: relative;
+  background: transparent;
+  padding: 24px 0 0;
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .video-call-local-wrap {
+    width: 160px;
+    height: 200px;
+    right: 24px;
+    bottom: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-call-controls-bar {
+    gap: 16px;
+    padding: 16px 12px 24px;
+  }
+
+  .video-call-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+
+  .video-call-btn-end {
+    width: 56px;
+    height: 56px;
+    font-size: 1.4rem;
+  }
+
+  .video-call-local-wrap {
+    width: 100px;
+    height: 130px;
+    right: 10px;
+    bottom: 90px;
+  }
+
+  .video-call-topbar {
+    padding: 8px 12px;
+  }
+
+  .video-call-topbar h2 {
+    font-size: 0.9rem;
+  }
+}
