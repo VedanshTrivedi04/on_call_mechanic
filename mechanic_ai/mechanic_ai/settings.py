@@ -25,12 +25,7 @@ SECRET_KEY = 'django-insecure-whnkgkj(7@ry-p+ati@i5!)#3&fbkb4g1pjtou!_)93c5rpgeq
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "on-call-mechanic.onrender.com",
-    
-]
+ALLOWED_HOSTS = ["*"]
 
 from dotenv import load_dotenv
 import os
