@@ -46,6 +46,12 @@ INSTALLED_APPS = [
     "channels",
 ]
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.onrender.com",
+    "on-call-mechanic.vercel.app"'
+]
 
 ASGI_APPLICATION = "mechanic_ai.asgi.application"
 
