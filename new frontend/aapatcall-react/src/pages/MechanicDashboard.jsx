@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/style.css";
 import "../styles/mechanic.css";
-import API from "../api";
+import API, { WS_BASE } from "../api";
 import { AuthContext } from "../context/AuthContext";
 import logo from "../assets/images/primary logo.png";
 
@@ -133,7 +133,7 @@ export default function MechanicDashboard() {
     if (!mechanicId || !online) return;
 
     const socket = new WebSocket(
-      `ws://127.0.0.1:8000/ws/mechanic/${mechanicId}/`
+      `${WS_BASE}/ws/mechanic/${mechanicId}/`
     );
 
     socket.onopen = () => console.log("🔥 WS Connected");
@@ -169,7 +169,7 @@ export default function MechanicDashboard() {
             API.post("mechanic/decline/", {
               request_id: data.request_id,
               mechanic_id: mechanicId,
-            }).catch(() => {});
+            }).catch(() => { });
             setRequest(null);
           }
         }, 1000);
@@ -224,7 +224,7 @@ export default function MechanicDashboard() {
       API.post("mechanic/decline/", {
         request_id: request.request_id,
         mechanic_id: mechanicId,
-      }).catch(() => {});
+      }).catch(() => { });
     }
     clearRequestTimer();
     setRequest(null);
