@@ -50,7 +50,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.onrender.com",
-    "on-call-mechanic.vercel.app",
+    "https://kenneth-unwrap-recipes-sponsored.trycloudflare.com/",
 ]
 
 ASGI_APPLICATION = "mechanic_ai.asgi.application"
