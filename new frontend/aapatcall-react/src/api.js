@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = "https://on-call-mechanic-1.onrender.com";
+const API_BASE = "https://kenneth-unwrap-recipes-sponsored.trycloudflare.com";
 const API = axios.create({
   baseURL: `${API_BASE}/api/`,
    withCredentials: true,
